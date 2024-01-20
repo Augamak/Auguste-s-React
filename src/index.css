@@ -1,0 +1,67 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  
+  background-color: rgb(162, 31, 84);
+}
+
+header {
+  border-bottom:  2px solid rgb(255, 1, 158);
+  height: 75px;
+}
+main {
+  height: calc(100% - 150px);
+}
+footer {
+  border-top:  2px solid rgb(255, 1, 158);
+  height: 75px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  gap: 20px;
+}
+
+a {
+  font-size: 24px;
+  text-decoration: none;
+  color: rgb(199, 40, 199);
+}
+a:hover {
+  
+  cursor: pointer;
+  color: rgb(76, 21, 213);
+}
+
+main {
+  padding-bottom: 20px;
+}
+
+.blocks {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-post {
+  width: 300px;
+  padding: 20px;
+  border: 2px solid rgb(255, 1, 158);
+  background-color: rgb(173, 23, 101);
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
