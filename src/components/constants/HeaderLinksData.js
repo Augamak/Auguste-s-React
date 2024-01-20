@@ -4,19 +4,15 @@ export const linksObj = [
         link: '/Home'
     },
     {
-        name: 'Products',
-        link: '/Products'
+        name: 'About us',
+        link: '/About us'
     },
     {
-        name: 'Reviews',
-        link: '/Reviews'
+        name: 'Blog',
+        link: '/Blog'
     },
     {
         name: 'Contacts',
         link: '/Contacts'
-    },
-    {
-        name: 'Help',
-        link: '/Help'
     }
 ]
