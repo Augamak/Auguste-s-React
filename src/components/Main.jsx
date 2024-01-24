@@ -1,21 +1,20 @@
-import { Cards } from "./constants/Cards"
-import { BlogPost } from "./BlogPost"
+import { Shoes } from "./constants/ShoesData"
+import { NikeComponent } from "./NikeComponent"
 
 export const Main = () => {
     return (
         <main>
-            <h1 style={{textAlign: 'center'}}>Auguste's Cards</h1>
-            <div className="blocks">
+            <h1 style={{textAlign: 'center'}}>
+                Auguste's Cards
+            </h1>
+            <div className="cards">
                 {
-                    Cards.map(blogPost => {
+                    Shoes.map(nike => {
                         return (
-                            <BlogPost
-                                image={blogPost.image}
-                                key={blogPost.producer}
-                                producer={blogPost.producer}
-                                model={blogPost.model}
-                                available={blogPost.available}
-                                price={blogPost.price}
+                            <NikeComponent
+                                key={nike.model}
+                                nike={nike}
+                                
                             />
                         )
                     })

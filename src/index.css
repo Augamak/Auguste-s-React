@@ -47,19 +47,62 @@ main {
   padding-bottom: 20px;
 }
 
-.blocks {
+.cards {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .blog-post {
-  width: 300px;
+  width: 200px;
   padding: 20px;
   border: 2px solid rgb(255, 1, 158);
   background-color: rgb(173, 23, 101);
+  position: relative;
 }
 
 .img {
   width: 200px;
+}
+
+h4 {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h6 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.card-counter {
+  display: flex;
+  margin: 10px 0;
+}
+
+.amount {
+  padding: 0 5px;
+}
+
+.favorite {
+  
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+svg {
+  width: 50px;
+  display: flex;
+  margin: 0;
 }
