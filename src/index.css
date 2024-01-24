@@ -60,12 +60,6 @@ main {
   background-color: rgb(173, 23, 101);
 }
 
-button {
-  width: 100px;
-  height: 40px;
-  cursor: pointer;
-}
-
 .img {
   width: 200px;
 }

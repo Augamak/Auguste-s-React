@@ -1,5 +1,5 @@
 import { Cards } from "./constants/Cards"
-import { BlogPost } from "./BlogPosts"
+import { BlogPost } from "./BlogPost"
 
 export const Main = () => {
     return (
@@ -10,12 +10,12 @@ export const Main = () => {
                     Cards.map(blogPost => {
                         return (
                             <BlogPost
-                                key={blogPost.title}
-                                title={blogPost.title}
-                                subtitle={blogPost.subtitle}
                                 image={blogPost.image}
-                                text={blogPost.text}
-                                button={blogPost.buttonText}
+                                key={blogPost.producer}
+                                producer={blogPost.producer}
+                                model={blogPost.model}
+                                available={blogPost.available}
+                                price={blogPost.price}
                             />
                         )
                     })
