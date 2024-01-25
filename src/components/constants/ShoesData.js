@@ -21,7 +21,7 @@ export const Shoes = [
         model: 'Women\'s Road Running Shoes',
         available: true,
         price: '137',   
-        favorite: false 
+        favorite: false
     },
     { 
         image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/54d9612f-6c92-4089-bcc3-229cb0406bdb/alphafly-3-womens-road-racing-shoes-LQX5b4.png',
