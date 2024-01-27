@@ -1,7 +1,7 @@
-import { Shoes } from "./constants/ShoesData"
+
 import { NikeComponent } from "./NikeComponent"
 
-export const Main = () => {
+export const Main = ({nikes, setNikes, setCart}) => {
     return (
         <main>
             <h1 style={{textAlign: 'center'}}>
@@ -9,11 +9,13 @@ export const Main = () => {
             </h1>
             <div className="cards">
                 {
-                    Shoes.map(nike => {
+                    nikes.map(nike => {
                         return (
                             <NikeComponent
+                                setNikes={setNikes}
                                 key={nike.model}
                                 nike={nike}
+                                setCart={setCart}
                                 
                             />
                         )

@@ -52,6 +52,7 @@ main {
   gap: 20px;
   flex-wrap: wrap;
   position: relative;
+  margin: 50px;
 }
 
 .blog-post {
@@ -102,5 +103,13 @@ p {
 
 .favorite.plus {
   fill: red;
+  
+}
+
+.cart {
+  color: black;
+  width: 40px;
+  display: flex;
+  gap: 10px;
   
 }

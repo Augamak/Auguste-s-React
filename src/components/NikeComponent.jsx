@@ -1,9 +1,10 @@
 import { useState } from "react"
 
 export const NikeComponent = (props) => {
+    
 
     const [amount, setAmount] = useState(0);
-    const [isFavorite, setIsFavorite] = useState(props.nike.favorite);
+    // const [isFavorite, setIsFavorite] = useState(props.nike.favorite);
 
     const minusHandler = () => {
         if (amount == 0) return
@@ -13,18 +14,28 @@ export const NikeComponent = (props) => {
         setAmount(amount + 1)
     }
     const addToCartHandler = () => {
-        
+        props.setCart(prev => {
+            return prev + amount * props.nike.price
+        })
+        setAmount (0)
     }
 
     const favHandler = () => {
-        setIsFavorite((prev) => {
-            return !prev
+        props.setNikes(prev => {
+            const temp = [...prev];
+            temp.forEach(nike => {
+                if(props.nike.id === nike.id) {
+                    nike.favorite = !nike.favorite
+                }
+            })
+            return temp
         })
+        console.log(props.nike.id)
     }
 
     return (
         <div className="blog-post">
-            <div className={isFavorite ? "favorite plus" : "favorite"} onClick={favHandler}>
+            <div className={props.nike.favorite ? "favorite plus" : "favorite"} onClick={favHandler}>
                 <svg className="plus"  height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	            viewBox="0 0 455 455" xml:space="preserve">
                 <path d="M326.632,10.346c-38.733,0-74.991,17.537-99.132,46.92c-24.141-29.384-60.398-46.92-99.132-46.92
@@ -47,9 +58,8 @@ export const NikeComponent = (props) => {
                     <button className="minus" onClick={minusHandler}>-</button>
                     <div className="amount">{amount}</div>
                     <button className="plus" onClick={plusHandler}>+</button>
-                    
                 </div>
-
+                <span>{amount ? `Total: ${amount * props.nike.price} Eur` : ''}</span>
                 <button style={{margin: '0 5px 0 0'}} onClick={addToCartHandler}>ADD TO CART</button>
             </div>
 
