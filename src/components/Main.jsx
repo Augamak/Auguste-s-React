@@ -1,7 +1,12 @@
 
+import { useContext } from "react"
+import { StoreContext } from "../App"
 import { NikeComponent } from "./NikeComponent"
 
-export const Main = ({nikes, setNikes, setCart}) => {
+
+export const Main = () => {
+    const { nikes } = useContext(StoreContext)
+
     return (
         <main>
             <h1 style={{textAlign: 'center'}}>
@@ -9,19 +14,10 @@ export const Main = ({nikes, setNikes, setCart}) => {
             </h1>
             <div className="cards">
                 {
-                    nikes.map(nike => {
-                        return (
-                            <NikeComponent
-                                setNikes={setNikes}
-                                key={nike.model}
-                                nike={nike}
-                                setCart={setCart}
-                                
-                            />
-                        )
-                    })
+                  nikes.map(nike => {
+                    return (<NikeComponent key={nike.model} nike={nike} />)
+                })
                 }
-
             </div>
         </main>    
     )

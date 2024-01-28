@@ -1,10 +1,11 @@
 import { useState } from "react"
+import { StoreContext } from "../App";
 
 export const NikeComponent = (props) => {
+    const { setCart, setNikes } = useState(StoreContext)
     
 
     const [amount, setAmount] = useState(0);
-    // const [isFavorite, setIsFavorite] = useState(props.nike.favorite);
 
     const minusHandler = () => {
         if (amount == 0) return
@@ -14,23 +15,23 @@ export const NikeComponent = (props) => {
         setAmount(amount + 1)
     }
     const addToCartHandler = () => {
-        props.setCart(prev => {
+        setCart(prev => {
             return prev + amount * props.nike.price
         })
         setAmount (0)
     }
 
     const favHandler = () => {
-        props.setNikes(prev => {
+        setNikes(prev => {
             const temp = [...prev];
             temp.forEach(nike => {
                 if(props.nike.id === nike.id) {
                     nike.favorite = !nike.favorite
                 }
             })
+
             return temp
         })
-        console.log(props.nike.id)
     }
 
     return (

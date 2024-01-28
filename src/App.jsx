@@ -1,6 +1,7 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
+import { createContext } from "react";
 import { Footer } from "./components/Footer";
 import { shoes } from "./components/constants/ShoesData"
 
@@ -12,15 +13,23 @@ export const App = () => {
   const [nikes, setNikes] = useState(shoes);
   const [cart, setCart] = useState(0)
 
+  const ctxObject = {
+    cart,
+    setCart,
+    nikes,
+    setNikes,
+    linksObj
+  }
+
   return (
     <>
-    <StoreContext.Provider value={name: 'Gosha'}>
-      <Header links={linksObj} cart={cart}/>
-      <Main nikes={nikes} setNikes={setNikes} setCart={setCart}/>
-      <Footer />
+    <StoreContext.Provider value={ctxObject} >
+      <Header />
+      <Main /> 
     </StoreContext.Provider>
+    <Footer />
     </>
   )
 }
 
-export default App
+
