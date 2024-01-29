@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { StoreContext } from "../App";
 
 export const NikeComponent = (props) => {
-    const { setCart, setNikes } = useState(StoreContext)
+    const { setCart, setNikes } = useContext(StoreContext)
     
 
     const [amount, setAmount] = useState(0);
